@@ -1,0 +1,16 @@
+---
+name: "MILF"
+guid: "eb5d7894-8eef-4b36-aa6f-5d124e828ce1"
+version: "1.0.0.0"
+targetAbi: "10.10.0.0"
+framework: "net8.0"
+overview: "Use file names as titles"
+description: >
+  Metadata provider that does one thing and one thing only:
+  it sets the Name metadatum of Movie and Episode media to their file names.
+category: "Metadata"
+owner: "Aanok"
+artifacts:
+- "Jellyfin.Plugin.MILF.dll"
+changelog: >
+  It's a whole new world-- I mean, plugin.
