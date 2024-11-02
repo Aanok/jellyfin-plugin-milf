@@ -8,7 +8,7 @@ It can be slightly customized with a regular expression to clean up the result a
 
 I'm a lazy bastard so I'm not setting up a proper plugin repo. We ride and die by manual installation only in this household.
 
-1. Get a hold of the dll, either by building the project or downloading a prebuilt library from the Releases page.
+1. Get a hold of the dll, either by building the project or downloading a prebuilt binary from the Releases page.
 
 2. Install the dll into your plugins folder on the server. On my machine it looks like
 ```
