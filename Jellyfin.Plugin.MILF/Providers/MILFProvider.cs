@@ -16,21 +16,25 @@ namespace Jellyfin.Plugin.MILF.Providers
         /// <inheritdoc />
         public string Name => Plugin.PluginName;
 
-        /// <inheritdoc />
-        public async Task<MetadataResult<Movie>> GetMetadata(MovieInfo info, CancellationToken cancellationToken)
+        private string GetName(string path)
         {
-            string name = Path.GetFileName(info.Path);
+            string name = Path.GetFileName(path);
             if (! string.IsNullOrEmpty(Plugin.Instance.Configuration.Naughty))
             {
                 name = Regex.Replace(name, Plugin.Instance.Configuration.Naughty, string.Empty);
             }
+            return name;
+        }
 
+        /// <inheritdoc />
+        public async Task<MetadataResult<Movie>> GetMetadata(MovieInfo info, CancellationToken cancellationToken)
+        {
             return new MetadataResult<Movie>
             {
                 HasMetadata = true,
                 Item = new Movie()
                 {
-                    Name = name
+                    Name = GetName(info.Path)
                 }
             };
         }
@@ -43,7 +47,7 @@ namespace Jellyfin.Plugin.MILF.Providers
                 HasMetadata = true,
                 Item = new Episode()
                 {
-                    Name = Path.GetFileName(info.Path)
+                    Name = GetName(info.Path)
                 }
             };
         }
